@@ -21,18 +21,10 @@ void MenuCatalogos::mostrar(vector<Clientes>& clientes,
              << "\t\t| Nivel: " << usuarioActual.getNivelAcceso() << "\n"
              << "\t\t====================================\n"
              << "\t\t1. Clientes\n"
-             << "\t\t2. Proveedores\n"
-             << "\t\t3. Productos\n"
-             << "\t\t4. Almacenes\n"
-             << "\t\t5. Transportistas\n";
-
-        // Mostrar opci�n adicional si el usuario tiene nivel de acceso alto (admin)
-        if(usuarioActual.getNivelAcceso() >= 3) {
-            cout << "\t\t6. Administracion\n";
         }
 
         // Opci�n para volver al men� principal
-        cout << "\t\t7. Volver al menu principal\n"
+        cout << "\t\t2. Volver al menu principal\n"
              << "\t\t====================================\n"
              << "\t\tSeleccione una opcion: ";
 
@@ -52,37 +44,6 @@ void MenuCatalogos::mostrar(vector<Clientes>& clientes,
                 break;
 
             case 2:
-                // Llamar al men� de proveedores
-                MenuProveedores::mostrar(proveedores, usuarioActual);
-                break;
-
-            case 3:
-                // Llamar al men� de productos
-                MenuProductos::mostrar(productos, usuarioActual);
-                break;
-
-            case 4:
-                // Llamar al men� de almacenes
-                MenuAlmacenes::mostrar(almacenes, usuarioActual);
-                break;
-
-            case 5:
-                // Llamar al men� de transportistas
-                MenuTransportistas::mostrar(transportistas, usuarioActual);
-                break;
-
-            case 6:
-                // Solo disponible si el usuario tiene nivel 3 o superior
-                if(usuarioActual.getNivelAcceso() >= 3) {
-                    MenuAdministracion::mostrar(administradores, usuarioActual);
-                } else {
-                    // Si no tiene acceso, se muestra un mensaje de error
-                    cout << "\n\t\tAcceso denegado. Nivel insuficiente.\n";
-                    system("pause");
-                }
-                break;
-
-            case 7:
                 // Volver al men� principal (salir del bucle)
                 return;
 

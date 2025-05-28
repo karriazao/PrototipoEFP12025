@@ -1,6 +1,5 @@
 //Karina Alejandra Arriaza Ortiz
 #include "usuarios.h"
-#include "usuarios.h"
 #include <iostream>
 #include <fstream>
 #include <conio.h>
@@ -8,9 +7,11 @@
 #include <algorithm>
 #include <sstream>
 #include <set>
-#include "globals.h"
 
 using namespace std;
+
+const int CODIGO_INICIAL = 3100;
+const int CODIGO_FINAL = 3149;
 
 extern bitacora auditoria;
 
@@ -18,6 +19,31 @@ extern bitacora auditoria;
 usuarios::usuarios() : id(""), nombre(""), contrasena(""), nivelAcceso(0) {}
 
 // Implementación de métodos
+string usuarios::generarCodigoUnico() {
+    ifstream archivo("usuarios.bin", ios::binary);
+    set<string> codigosExistentes;
+    string linea;
+
+    if (archivo.is_open()) {
+        while (getline(archivo, linea)) {
+            istringstream ss(linea);
+            string idArchivo;
+            if (ss >> idArchivo) {
+                codigosExistentes.insert(idArchivo);
+            }
+        }
+        archivo.close();
+    }
+
+    for (int i = CODIGO_INICIAL; i <= CODIGO_FINAL; ++i) {
+        string codigo = to_string(i);
+        if (codigosExistentes.find(codigo) == codigosExistentes.end()) {
+            return codigo;
+        }
+    }
+
+    throw runtime_error("No hay códigos disponibles en el rango.");
+}
 
 bool usuarios::esNumero(const string& str) {
     return !str.empty() && all_of(str.begin(), str.end(), ::isdigit);

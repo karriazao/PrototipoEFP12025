@@ -1,12 +1,10 @@
 #include "menuprincipal.h"
 #include "menuarchivo.h"
-#include "menucatalogos.h"
-#include "menuinformes.h"
+#include "menucatalogo.h"
 #include "usuarios.h"
 #include "bitacora.h"
 #include <vector>
 #include <iostream>
-#include "../backup.h"
 
 using namespace std;
 void MenuPrincipal::mostrar(std::vector<Clientes>& clientes,
@@ -22,10 +20,8 @@ void MenuPrincipal::mostrar(std::vector<Clientes>& clientes,
              << "\t\t================================================\n"
              << "\t\t 1. Archivo\n"
              << "\t\t 2. Catalogos\n"
-             << "\t\t 3. Procesos\n"
-             << "\t\t 4. Informes\n"
-             << "\t\t 5. Bitacora\n"
-             << "\t\t 6. Salir\n"
+             << "\t\t 3. Bitacora\n"
+             << "\t\t 4. Salir\n"
              << "\t\t========================================\n"
              << "\t\tIngresa tu opcion: ";
 
@@ -37,33 +33,20 @@ void MenuPrincipal::mostrar(std::vector<Clientes>& clientes,
                 break;
 
             case 2:
-                MenuCatalogos::mostrar(clientes, proveedores, productos,
-                                     almacenes, administradores,
-                                     transportistas, usuarioActual);
+                MenuCatalogos::mostrar(clientes, usuarioActual);
                 break;
 
-            case 3:
-                // Llamada corregida pasando los vectores necesarios
-                MenuProcesos menuProcesos;
-                menuProcesos.mostrar(clientes, productos, almacenes, proveedores);
-                break;
-
-            case 4:
-                MenuInformes menuInformes;
-                menuInformes.mostrar(usuarioActual);
-                break;
-
-            case 5: {
+            case 3: {
                 bitacora b;
                 b.menuBitacora();
                 break;
             }
 
-            case 6:
+            case 4:
                 return;
 
             default:
                 cout << "\n\t\tOpcion invalida... Intenta de nuevo...";
         }
-    } while(choice != 6);
+    } while(choice != 4);
 }

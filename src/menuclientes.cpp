@@ -8,6 +8,11 @@
 #include <limits> // Para manejo de entradas inv�lidas y limpieza de buffer
 
 using namespace std;
+
+const int CODIGO_INICIAL = 3107; /**< ID mínimo válido para clientes */
+const int CODIGO_FINAL = 3157;
+
+
 void MenuClientes::mostrar(vector<Clientes>& listaClientes, usuarios& usuarioActual) {
     int opcion;
     string input;

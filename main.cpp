@@ -1,25 +1,29 @@
 #include <iostream>
-#include <iostream>
 #include <vector>
 #include <string>
 #include "usuarios.h"
 #include "MenuPrincipal.h"
+#include "Clientes.h"
 
 int main() {
     std::cout << "Inicio del programa..." << std::endl;
 
     // Inicializar todas las listas necesarias
-
+    std::vector<Clientes> listaClientes;
 
     // Cargar los datos desde archivos
     std::cout << "Cargando clientes..." << std::endl;
     Clientes::cargarDesdeArchivo(listaClientes);
+
+
+    std::cout << "Datos cargados correctamente.\n";
 
     // Sistema de login
     if (usuarioRegistrado.loginUsuarios()) {
         std::cout << "Login exitoso.\n";
         MenuPrincipal::mostrar(
             listaClientes,
+            usuarioRegistrado
         );
     } else {
         std::cout << "Login fallido. Saliendo del programa.\n";

@@ -30,9 +30,10 @@ private:
     std::string contrasena;
     int nivelAcceso;
 
-    // Metodos auxiliares privados
+    std::string generarCodigoUnico();
     bool esNumero(const std::string& str);
     bool usuarioExiste(const std::string& nombreUsuario);
     std::string leerPasswordSegura();
+
 };
 #endif // USUARIOS_H

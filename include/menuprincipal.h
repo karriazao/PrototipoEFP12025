@@ -1,16 +1,16 @@
 #ifndef MENUPRINCIPAL_H
 #define MENUPRINCIPAL_H
+#include <vector>              // Para usar contenedores vector
+#include "usuarios.h"
+#include "Clientes.h"
 
 
-class menuprincipal
-{
-    public:
-        menuprincipal();
-        virtual ~menuprincipal();
-
-    protected:
-
-    private:
+// Clase que implementa el men� principal del sistema
+class MenuPrincipal {
+public:
+    static void mostrar(
+        std::vector<Clientes>& clientes,
+        usuarios& usuarioActual
+    );
 };
-
 #endif // MENUPRINCIPAL_H

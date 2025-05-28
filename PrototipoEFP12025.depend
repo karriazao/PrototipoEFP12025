@@ -2,7 +2,7 @@
 1748446815 source:c:\users\va\desktop\prototipo\prototipoefp12025\src\main.cpp
 	"main.h"
 
-1748446814 c:\users\va\desktop\prototipo\prototipoefp12025\include\main.h
+1748450352 c:\users\va\desktop\prototipo\prototipoefp12025\include\main.h
 
 1748447499 source:c:\users\va\desktop\prototipo\prototipoefp12025\src\bitacora.cpp
 	"bitacora.h"
@@ -21,4 +21,64 @@
 1748447322 c:\users\va\desktop\prototipo\prototipoefp12025\include\bitacora.h
 	<string>
 	<unordered_map>
+
+1748449035 source:c:\users\va\desktop\prototipo\prototipoefp12025\src\clientes.cpp
+	"Clientes.h"
+	<iostream>
+	<algorithm>
+	<fstream>
+	"bitacora.h"
+	<sstream>
+	<iomanip>
+	<string>
+	<limits>
+
+1748449725 c:\users\va\desktop\prototipo\prototipoefp12025\include\clientes.h
+	<vector>
+	<string>
+
+1748450231 source:c:\users\va\desktop\prototipo\prototipoefp12025\src\menuclientes.cpp
+	"menuclientes.h"
+	"Cclientes.h"
+	<iostream>
+	<vector>
+	<string>
+	<limits>
+
+1748449726 c:\users\va\desktop\prototipo\prototipoefp12025\include\menuclientes.h
+	"Clientes.h"
+	"usuarios.h"
+	<vector>
+
+1748451179 c:\users\va\desktop\prototipo\prototipoefp12025\include\usuarios.h
+	<string>
+	"bitacora.h"
+
+1748448596 c:\users\va\desktop\prototipo\prototipoefp12025\include\cclientes.h
+
+1748450354 source:c:\users\va\desktop\prototipo\prototipoefp12025\src\menuarchivo.cpp
+	"menuarchivo.h"
+	"usuarios.h"
+	<iostream>
+
+1748449726 c:\users\va\desktop\prototipo\prototipoefp12025\include\menuarchivo.h
+
+1748450957 source:c:\users\va\desktop\prototipo\prototipoefp12025\src\menuprincipal.cpp
+	"menuprincipal.h"
+	"menuarchivo.h"
+	"menucatalogo.h"
+	"usuarios.h"
+	"bitacora.h"
+	<vector>
+	<iostream>
+
+1748450865 c:\users\va\desktop\prototipo\prototipoefp12025\include\menuprincipal.h
+	<vector>
+	"usuarios.h"
+	"Clientes.h"
+
+1748449749 c:\users\va\desktop\prototipo\prototipoefp12025\include\menucatalogo.h
+	<vector>
+	"Clientes.h"
+	"usuarios.h"
 
